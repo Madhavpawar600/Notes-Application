@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Notes</title>
+  {%load static%}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'stylling.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    #containernote{
+      margin-top: 160px;
+    }
+    #allnote,#done,#notepad,#save, .delete{
+      display: none;
+    }
+    .button{
+      margin-bottom: 20px;
+    }
+    textarea{
+      width: 100%;
+      max-width: 100%
+      font-size:16px;
+      line-height: 1.5em;
+      border-left-width: 20px;
+      border-color: #CA3DD9;
+      color: #CA3DD9;
+      padding: 10px;
+    }
+    tr{
+      cursor: pointer;
+    }
+    #notes{
+      height:350px;
+      overflow: scroll;
+    }
+    .notes{
+      border: 1px solid grey;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 0 10px;
+      background: linear-gradient(#FFFFFF,#ECEAE7);
+    }
+    .text{
+      font-size: 20px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .delete{
+      float: left;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+	{% include 'mainNavigationbar.html' %}
+
+  {%block content%}
+    
+  {%endblock%}
+      
+	 <!-- Footer-->
+      <div class="footer">
+          <div class="container">
+              <p>madhavpawar600 Copyright &copy; 2019-2020 </p>
+          </div>
+      </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'notes.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+</body>
+</html>

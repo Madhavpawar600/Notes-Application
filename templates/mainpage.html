@@ -1,0 +1,40 @@
+{%extends "layout.html" %}
+{%block content%}
+	<!-- container -->
+  <div class="container" id="containernote">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <form method="POST" id="formnotepad">
+          {% csrf_token %}
+        <div class="button">
+          <input type="button" id='addnote' class="btn btn-info btn-lg" value="Add Note">
+          <input type="button" id='edit' class="btn btn-info btn-lg pull-right" value="Edit">
+          <input type="button" id='allnote' class="btn btn-info btn-lg" value="All Note">
+          <input type="button" id='done' class="btn green btn-lg pull-right" value="Done">
+          <input type="button" id='save' class="btn green btn-lg pull-right" value="Save">  
+        </div>
+        <div id="notepad">
+          <textarea rows="10" form="formnotepad"></textarea>
+        </div>
+        <div id="notes">
+        {%for note in notes%}
+        <div class="delete">
+        <button class="btn btn-danger btn-lg">Delete</button>
+      </div>
+        <div class="notes" id={{note.id}}>
+          <!--Ajax call-->
+          <div class='text' id='notestext'>{{note.textnote}}</div>
+          <div class='timetext' id='notestime'>{{note.time}}</div>
+        </div>
+        {%endfor%}
+      </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  var note="{{notes}}";
+</script>
+
+{%endblock%}
